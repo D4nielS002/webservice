@@ -23,5 +23,12 @@ switch ($_GET["op"]) {
         $result = $estado->delete_estado($id);
         echo json_encode($result);
         break;
+
+    case 'UpdateEstado':
+        $id = $body["idEstado"];
+        $nombre = $body["Nombre"];
+        $result = $estado->update_estado($id, $nombre);
+        echo json_encode($result);
+        break;
 }
 ?>

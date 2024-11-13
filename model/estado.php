@@ -33,5 +33,15 @@ class Estado extends Conectar {
         $sql->execute();
         return ["resultado" => "Estado eliminado"];
     }
+    public function update_estado($id, $nombre) {
+        $conectar = parent::Conexion();
+        parent::setnames();
+        $sql = "UPDATE estado SET Nombre = ? WHERE idEstado = ?";
+        $sql = $conectar->prepare($sql);
+        $sql->bindValue(1, $nombre);
+        $sql->bindValue(2, $id);
+        $sql->execute();
+        return ["resultado" => "Estado actualizado"];
+    }
 }
 ?>
