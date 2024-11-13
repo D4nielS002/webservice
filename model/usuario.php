@@ -3,7 +3,10 @@ class Usuario extends Conectar {
     public function get_usuario() {
         $conectar = parent::Conexion();
         parent::setnames();
-        $sql = "SELECT * FROM usuario";
+        // Modificar la consulta para hacer un JOIN con la tabla departamentos
+        $sql = "SELECT u.idUsuario, u.Nombre, u.Apellido, u.Correo, u.idDepartamento, d.Departamento AS NombreDepartamento
+                FROM usuario u
+                INNER JOIN departamentos d ON u.idDepartamento = d.idDepartamento";
         $sql = $conectar->prepare($sql);
         $sql->execute();
         return $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
