@@ -12,7 +12,7 @@ class Usuario extends Conectar {
     public function insert_usuario($nombre, $apellido, $correo, $idDepartamento) {
         $conectar = parent::Conexion();
         parent::setnames();
-        $sql = "INSERT INTO usuarios (Nombre, Apellido, Correo, idDepartamento) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO usuario (Nombre, Apellido, Correo, idDepartamento) VALUES (?, ?, ?, ?)";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre);
         $sql->bindValue(2, $apellido);
@@ -25,7 +25,7 @@ class Usuario extends Conectar {
     public function delete_usuario($id) {
         $conectar = parent::Conexion();
         parent::setnames();
-        $sql = "DELETE FROM usuarios WHERE idUsuario = ?";
+        $sql = "DELETE FROM usuario WHERE idUsuario = ?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $id);
         $sql->execute();
@@ -35,7 +35,7 @@ class Usuario extends Conectar {
     public function update_usuario($id, $nombre, $apellido, $correo, $idDepartamento) {
         $conectar = parent::Conexion();
         parent::setnames();
-        $sql = "UPDATE usuarios SET Nombre = ?, Apellido = ?, Correo = ?, idDepartamento = ? WHERE idUsuario = ?";
+        $sql = "UPDATE usuario SET Nombre = ?, Apellido = ?, Correo = ?, idDepartamento = ? WHERE idUsuario = ?";
         $sql = $conectar->prepare($sql);
         $sql->bindValue(1, $nombre);
         $sql->bindValue(2, $apellido);
