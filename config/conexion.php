@@ -12,7 +12,7 @@ class Conectar {
         }
     }
 
-    // Esta función permite devolver la conexión en un formato utf8
+    // Estaasdasd función permite devolver la conexión en un formato utf8
     // para caracteres especiales como tildes o la letra ñ
     public function setnames() {
         return $this->dbh->query("SET NAMES 'utf8'");
