@@ -16,7 +16,7 @@ switch ($_GET["op"]) {
         $nombre = $body["Nombre"];
         $apellido = $body["Apellido"];
         $correo = $body["Correo"];
-        $idDepartamento = $body["idDepartamento"];
+        $idDepartamento = $body["idDepartamento"]; 
         $result = $usuario->insert_usuario($nombre, $apellido, $correo, $idDepartamento);
         echo json_encode($result);
         break;
